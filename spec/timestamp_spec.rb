@@ -1,6 +1,4 @@
 
-# hours:minutes:seconds,milliseconds
-
 def ts *args
   SubParser::Timestamp.new *args
 end
