@@ -6,10 +6,10 @@ require "sub_parser/version"
 Gem::Specification.new do |spec|
   spec.name          = "sub_parser"
   spec.version       = SubParser::VERSION
-  spec.authors       = ["CarlOlson"]
+  spec.authors       = ["Carl Olson"]
   spec.email         = ["CarlOlson@users.noreply.github.com"]
 
-  spec.summary       = %q{}
+  spec.summary       = %q{A simple library for parsing and manipulating SRT files.}
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
