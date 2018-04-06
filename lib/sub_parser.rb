@@ -1,5 +1,6 @@
+
 require "sub_parser/version"
+require "sub_parser/timestamp"
 
 module SubParser
-  # Your code goes here...
 end
