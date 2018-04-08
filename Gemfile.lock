@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     sub_parser (0.1.0)
-      ve (= 0.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -22,7 +21,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    ve (0.0.3)
 
 PLATFORMS
   ruby
