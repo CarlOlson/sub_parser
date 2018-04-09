@@ -1,4 +1,6 @@
 
+require 'forwardable'
+
 module SubParser
   class Subtitle
 
