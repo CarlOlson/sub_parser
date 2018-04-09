@@ -5,4 +5,11 @@ require "sub_parser/timespan"
 require "sub_parser/timestamp"
 
 module SubParser
+
+  def self.parse subtitles
+    subtitles
+      .split(/\n\n/)
+      .map { |raw| Subtitle.parse raw }
+  end
+
 end
