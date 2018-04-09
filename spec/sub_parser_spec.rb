@@ -3,7 +3,8 @@
 EXAMPLE_SRT = <<SRT
 1
 00:00:33,433 --> 00:00:35,402
-グエッ！　ウゥ～
+グエッ！
+ウゥ～
 
 2
 00:00:35,402 --> 00:00:37,354
@@ -24,6 +25,14 @@ RSpec.describe SubParser do
       subs = SubParser.parse EXAMPLE_SRT
 
       expect(subs.size).to eql 2
+    end
+
+    it 'should handle LFCR line endings' do
+      raw = EXAMPLE_SRT.split("\n").join("\n\r")
+      subs = SubParser.parse raw
+
+      expect(subs.size).to eql 2
+      expect(subs.first.text).to eql("グエッ！\nウゥ～")
     end
   end
 end

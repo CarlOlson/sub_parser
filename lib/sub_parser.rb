@@ -8,6 +8,7 @@ module SubParser
 
   def self.parse subtitles
     subtitles
+      .gsub(/\r/, '')
       .split(/\n\n/)
       .map { |raw| Subtitle.parse raw }
   end
