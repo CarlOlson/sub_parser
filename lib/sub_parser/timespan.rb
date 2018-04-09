@@ -12,5 +12,11 @@ module SubParser
       '%s --> %s' % [start_time.to_s, end_time.to_s]
     end
 
+    def self.parse raw
+      if raw =~ /(.*) --> (.*)/
+        Timespan.new Timestamp.parse($1), Timestamp.parse($2)
+      end
+    end
+
   end
 end

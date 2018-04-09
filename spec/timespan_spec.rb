@@ -17,4 +17,14 @@ RSpec.describe SubParser::Timespan do
     end
   end
 
+  describe '#parse' do
+    it 'should parse a simple timespan' do
+      text = '00:00:00,000 --> 00:00:01,000'
+      span = SubParser::Timespan.parse text
+
+      expect(span.start_time).to eql(start_time)
+      expect(span.end_time).to eql(end_time)
+    end
+  end
+
 end
