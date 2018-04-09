@@ -17,5 +17,11 @@ module SubParser
       "%s\n%s" % [timespan, text]
     end
 
+    def self.parse raw
+      if raw =~ /\d+\n(.*)\n((?:.|\n)*)/
+        Subtitle.new Timespan.parse($1), $2
+      end
+    end
+
   end
 end

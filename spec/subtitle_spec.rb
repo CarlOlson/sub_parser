@@ -25,4 +25,21 @@ RSpec.describe SubParser::Subtitle do
     end
   end
 
+  describe '#parse' do
+    it 'should parse a subtitle' do
+      raw = ['1', '00:00:00,000 --> 00:00:00,000', '']
+      subs = SubParser::Subtitle.parse raw.join("\n")
+
+      expect(subs.text).to eql ''
+      expect(subs.timespan.to_s).to eql raw[1]
+    end
+
+    it 'should parse multi-line subtitles' do
+      raw = ['1', '00:00:00,000 --> 00:00:00,000', 'Hello,', 'World!']
+      subs = SubParser::Subtitle.parse raw.join("\n")
+
+      expect(subs.text).to eql("Hello,\nWorld!")
+    end
+  end
+
 end
