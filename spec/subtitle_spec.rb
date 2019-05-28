@@ -1,4 +1,3 @@
-
 RSpec.describe SubParser::Subtitle do
 
   subject { SubParser::Subtitle.new timespan, text }

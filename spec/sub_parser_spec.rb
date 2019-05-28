@@ -35,4 +35,11 @@ RSpec.describe SubParser do
       expect(subs.first.text).to eql("グエッ！\nウゥ～")
     end
   end
+
+  describe '#join' do
+    it 'should join parsed subtitles' do
+      subs = SubParser.parse EXAMPLE_SRT
+      expect(SubParser.join subs).to eql(EXAMPLE_SRT)
+    end
+  end
 end
